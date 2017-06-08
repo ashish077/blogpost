@@ -2,9 +2,9 @@ from django.db import models
 from django.utils import timezone
 # Create your models here.
 
-class post(models.Model):
+class Post(models.Model):
     author=models.ForeignKey('auth.User')
-    title=models.CharField(max_length=200)
+    title=models.CharField(max_length=10)
     text=models.TextField()
     created_date=models.DateTimeField(default=timezone.now)
     published_date=models.DateTimeField(blank=True,null=True)
@@ -17,4 +17,4 @@ class post(models.Model):
         return self.title
 
     def get_active_members(self):
-        return return self.get_query_set().filter(is_active=True)
+         return self.get_query_set().filter(is_active=True)
