@@ -15,3 +15,6 @@ class post(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_active_members(self):
+        return return self.get_query_set().filter(is_active=True)
